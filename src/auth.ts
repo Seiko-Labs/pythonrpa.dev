@@ -42,7 +42,7 @@ const nextAuth = NextAuth({
       },
       async authorize(params) {
         const authorization = await signInPassword(
-          params as SignInPasswordRequest,
+          params as SignInPasswordRequest
         );
 
         if (!authorization.success) {
@@ -112,6 +112,7 @@ const nextAuth = NextAuth({
       return token;
     },
   },
+  trustHost: true,
 });
 
 /**
