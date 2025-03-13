@@ -1,0 +1,26 @@
+{
+  "LoginForm": {
+    "title": "Login to your account",
+    "description": "Enter your email below to login to your account",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot your password?",
+    "submitButton": "Login",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "signingIn": "Signing in...",
+    "signInSuccess": "You have successfully signed in"
+  },
+  "SignupForm": {
+    "title": "Sign up for an account",
+    "description": "Enter your details below to create an account",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submitButton": "Sign up",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login"
+  },
+  "Home": {},
+  "Errors": {},
+  "Notifications": {}
+}

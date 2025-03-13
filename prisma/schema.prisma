@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Draft
+model Account {
+  id                             String      @id @default(uuid())
+  createdAt                      DateTime    @default(now())
+  email                          String      @unique
+  firstName                      String
+  lastName                       String
+  password                       String
+  country                        String
+  whatsapp                       String
+  companyName                    String
+  currentRole                    String
+  preferredCommunicationLanguage String
+  intendedUse                    IntendedUse
+  comments                       String?
+  updatedAt                      DateTime    @updatedAt
+  isAdmin                        Boolean     @default(false)
+  Trial                          Trial[]
+}
+
+enum IntendedUse {
+  BUSINESS_EFFICIENCY
+  CLIENTS_SERVICE_PROVIDER
+  ENHANCE_AI_AGENTS
+  OTHER
+}
+
+enum TrialStatus {
+  ACTIVE
+  EXPIRED
+  CANCELLED
+}
+
+model Trial {
+  id        String      @id @default(uuid())
+  createdAt DateTime    @default(now())
+  account   Account     @relation(fields: [accountId], references: [id])
+  accountId String
+  startDate DateTime
+  endDate   DateTime
+  status    TrialStatus
+  updatedAt DateTime    @updatedAt
+}
