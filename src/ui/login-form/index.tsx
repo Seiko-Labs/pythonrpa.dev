@@ -80,6 +80,7 @@ export function LoginForm({
               <ErrorLabel htmlFor="password">{t("passwordLabel")}</ErrorLabel>
               <Link
                 href="#"
+                tabIndex={-1}
                 className="ml-auto text-sm underline-offset-4 hover:underline"
               >
                 {t("forgotPassword")}

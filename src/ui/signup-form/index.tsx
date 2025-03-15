@@ -90,7 +90,7 @@ export function SignupForm({
             },
             {
               shouldFocus: true,
-            }
+            },
           );
 
           return;
